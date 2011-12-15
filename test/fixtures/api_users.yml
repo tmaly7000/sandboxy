@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  usr_name: MyString
+  enc_pswd: MyString
+  api_key: MyString
+  is_active: false
+
+two:
+  usr_name: MyString
+  enc_pswd: MyString
+  api_key: MyString
+  is_active: false

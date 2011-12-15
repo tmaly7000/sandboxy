@@ -1,0 +1,19 @@
+%p
+  %div API User Snapshot.
+%p
+- [:notice, :error, :message].each do |key|
+  - unless flash[key].blank?
+    %p= flash[key]
+
+- if @data != nil && @data.count > 0
+  %table{ :border => "1", :width => "800", :cellpadding => "2", :cellspacing => "0" }
+    %tbody
+      - @data.each do |maprow|
+        %tr
+          - [maprow.usr_name, maprow.api_key, maprow.is_active, maprow.created_at].each do |mapcol|
+            %td= mapcol
+- else
+  %p No API users defined.
+
+%p
+  = link_to 'Add Api User', new_api_user_path

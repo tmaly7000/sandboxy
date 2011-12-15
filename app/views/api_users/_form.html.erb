@@ -1,0 +1,55 @@
+
+<%= form_for(@api_user) do |f| %>
+  <% if @api_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@api_user.errors.count, "error") %> prohibited this Api User from being saved:</h2>
+
+      <ul>
+      <% @api_user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="fieldContainer">
+    <div class="fieldLabel">
+        <%= f.label :usr_name, 'User Name'%>
+    </div>
+    <div class="field">
+        <%= f.text_field :usr_name %>
+    </div>
+  </div>
+
+  <div class="fieldContainer">
+    <div class="fieldLabel">
+        <%= f.label :enc_pswd, 'Password' %>
+    </div>
+    <div class="field">
+        <%= f.text_field :enc_pswd %>
+    </div>
+  </div>
+
+  <div class="fieldContainer">
+    <div class="fieldLabel">
+        <%= f.label :api_key, 'API Key' %>
+    </div>
+    <div class="field">
+        <%= f.text_field :api_key %>
+    </div>
+  </div>
+
+  <div class="fieldContainer">
+    <div class="fieldLabel">
+        <%= f.label :is_active, 'Active?' %>
+    </div>
+    <div class="field">
+        <%= f.check_box :is_active, :id => "is_active", :class => "allows_dependent_fields" %>
+    </div>
+  </div>
+
+  <div class="fieldContainer">
+    <%= f.submit  "Add" %>
+  </div>
+
+<% end %>
