@@ -1,19 +1,26 @@
-%p
+
+= content_for :left_nav do
+ - render :partial => "home/nav", :locals => { :context => 'API' }
+
+= content_for :main do
+
+ %p
   %div API User Snapshot.
-%p
-- [:notice, :error, :message].each do |key|
-  - unless flash[key].blank?
-    %p= flash[key]
 
-- if @data != nil && @data.count > 0
-  %table{ :border => "1", :width => "800", :cellpadding => "2", :cellspacing => "0" }
+  - if @data != nil && @data.count > 0
+   %table{ :border => "1", :width => "500", :cellpadding => "2", :cellspacing => "0" }
     %tbody
-      - @data.each do |maprow|
-        %tr
-          - [maprow.usr_name, maprow.api_key, maprow.is_active, maprow.created_at].each do |mapcol|
-            %td= mapcol
-- else
-  %p No API users defined.
+     - @data.each do |maprow|
+      %tr
+       - [maprow.usr_name, maprow.api_key, maprow.is_active].each do |mapcol|
+        %td= mapcol
+       %td
+        = link_to 'Delete', delete_api_users_path(:id => maprow.id), :confirm => 'Are you sure?', :method => :delete
+  - else
+   %p No API users defined.
 
-%p
-  = link_to 'Add Api User', new_api_user_path
+  %p
+   = link_to 'Add Api User', new_api_user_path
+
+  %p
+   = link_to "Back", :root

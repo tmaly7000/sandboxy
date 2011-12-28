@@ -1,2 +1,6 @@
-%p
- Show
+= content_for :left_nav do
+ - render :partial => "home/nav", :locals => { :context => 'LINKS' }
+
+= content_for :main do
+ %d
+  Links

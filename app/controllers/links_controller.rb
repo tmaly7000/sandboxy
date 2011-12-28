@@ -1,6 +1,7 @@
 class LinksController < ApplicationController
 
   def index
+    @crumbs << Crumb.new("Links", "")
   end
 
   def show

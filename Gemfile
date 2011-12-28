@@ -8,9 +8,11 @@ gem 'rails', '3.1.3'
 gem 'pg'
 gem 'heroku'
 gem 'haml'
+gem 'sass'
 gem 'httparty'
 gem 'devise'
 gem 'nokogiri'
+gem 'cancan'
 
 # Gems used only for assets and not required
 # in production environments by default.

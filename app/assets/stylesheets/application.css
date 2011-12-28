@@ -6,9 +6,10 @@
  *= require_tree . 
 */
 body {
-  background-color: #d3d3d3;
-  font-family: Verdana, Helvetica, Arial;
+  background-color: black;
+  font-family: Arial;
   font-size: 14px;
+  color: lime;
 }
 
 a img {
@@ -16,7 +17,7 @@ a img {
 }
 
 a {
-  color: #0000FF;
+  color: lime;
 }
 
 .clear {
@@ -25,13 +26,72 @@ a {
   overflow: hidden;
 }
 
-#container {
-  width: 75%;
+.container {
+  width: 950px;
   margin: 0 auto;
-  background-color: #FFF;
-  padding: 20px 40px;
-  border: solid 1px black;
-  margin-top: 20px;
+  vertical-align: top;
+  padding: 10px 5px 10px 5px;
+  border: solid 1px silver;
+}
+
+.bigtext {
+  font-size: 18px;
+}
+
+.login_state {
+  float: right;
+  font-size: 14px;
+  border: solid 1px silver;
+}
+
+.top_container {
+  display: table;
+}
+
+.notifier {
+  float: left;
+  border: solid 1px silver;
+}
+
+.nav_options {
+  float: left;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: solid 1px silver;
+}
+
+.nav_options a {
+  text-decoration: none;
+}
+
+.main {
+  float: left;
+  padding-left: 20px;
+  border: solid 1px silver;
+}
+
+.slight_rounding {
+  border-bottom-left-radius: 1em;
+  /* border-bottom-right-radius: 1em;
+  border-top-left-radius: 1em; */
+  border-top-right-radius: 1em;
+}
+
+.nav_container {
+
+  width: 150px;
+  background-color: inherit;
+  padding: 20px 20px 20px 20px;
+  border: solid 2px #32cd32;
+  border-bottom-left-radius: 1em;
+  border-top-right-radius: 1em;
+
+}
+
+.nav_item {
+  display: table;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 #flash_notice, #flash_error {
@@ -41,7 +101,7 @@ a {
 }
 
 #flash_notice {
-  background-color: #CFC;
+  background-color: black;
   border: solid 1px #6C6;
 }
 
@@ -88,17 +148,12 @@ a {
   list-style: disc;
 }
 
-#user_nav {
-  float: right;
-  font-size: 12px;
-}
-
 .fieldContainer {
     padding-top: 10px;
     width: 500px;
     display: table;
     clear: both;
-
+    text-align: left;
 }
 .fieldLabel {
     float: left;
@@ -106,6 +161,31 @@ a {
     text-align:left;
 }
 .field {
+    float: left;
+    width: 200px;
+    text-align:left;
+}
+
+.login_container {
+
+  vertical-align: middle;
+
+  width: 350px;
+  margin: 0 auto;
+  background-color: black;
+  padding: 20px 30px 20px 40px;
+  border: solid 2px #32cd32;
+  margin-top: 20px;
+
+}
+
+.login_container .fieldContainer .fieldLabel {
+    float: left;
+    width: 100px;
+    text-align:left;
+}
+
+.login_container .fieldContainer .field {
     float: left;
     width: 200px;
     text-align:left;

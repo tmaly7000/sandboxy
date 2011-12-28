@@ -1,9 +1,9 @@
 
-%p
- = link_to 'API User Administration', api_users_list_path
+= content_for :left_nav do
+ - render :partial => "home/nav", :locals => { :context => 'NEWS' }
 
-%p
- = link_to 'Linkster', links_path
+= content_for :main do
+ - render :partial => "news/feeds"
 
-%p
- Knowledge Base
+
+

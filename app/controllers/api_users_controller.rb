@@ -29,4 +29,19 @@ class ApiUsersController < ApplicationController
     end
 
   end
+
+  def destroy
+
+    deleteMe = ApiUser.find(params[:id])
+    if deleteMe
+       deleteMe.destroy
+    end
+
+    respond_to do |format|
+      format.html { redirect_to :action => 'index' }
+      format.xml  { head :ok }
+    end
+
+  end
+
 end

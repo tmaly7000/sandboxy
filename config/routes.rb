@@ -18,6 +18,7 @@ Sandboxy::Application.routes.draw do
   match 'ApiUsers' => 'api_users#index', :via => [:get], :as => 'api_users_list'
   match 'ApiUsers/new' => 'api_users#new', :via => [:get], :as => 'new_api_user'
   match 'ApiUsers/create' => 'api_users#create', :via => [:post], :as => "api_users"
+  match 'ApiUsers/destroy/:id' => 'api_users#destroy', :via => [:delete], :as => "delete_api_users"
 
   resource :links
 
