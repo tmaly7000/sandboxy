@@ -1,0 +1,6 @@
+%ul{:class => 'nav_container'}
+ - link_titles = {'News Port' => root_path, 'API User Administration' => api_users_list_path, 'Linkster' => links_path, 'Notebook' => root_path, 'Gallery' => root_path}
+ - link_titles.each do |k,v|
+  %li{:class => 'nav_item'}
+  = link_to k, v
+
