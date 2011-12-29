@@ -2,5 +2,22 @@
  - render :partial => "home/nav", :locals => { :context => 'LINKS' }
 
 = content_for :main do
- %d
-  Links
+ = form_tag get_links_by_group_path do
+  %div
+   Groups:
+   = select_tag :group, options_from_collection_for_select(@groups,"id","title",(@selectedGroup) ? @selectedGroup : 0)
+   = submit_tag "Show"
+
+  - if @group_links
+   - if @group_links.count > 0
+    %table{ :border => "1", :width => "500", :cellpadding => "2", :cellspacing => "0" }
+     %tbody
+      - @group_links.each do |maprow|
+       %tr
+       - [maprow.title, maprow.url].each do |mapcol|
+        %td= mapcol
+       %td
+        = link_to 'Delete', delete_api_users_path(:id => maprow.id), :confirm => 'Are you sure?', :method => :delete
+   - else
+    %p
+     No links found for that group.

@@ -21,6 +21,7 @@ Sandboxy::Application.routes.draw do
   match 'ApiUsers/destroy/:id' => 'api_users#destroy', :via => [:delete], :as => "delete_api_users"
 
   resource :links
+  match 'links/get_links' => 'links#get_links', :via => [:post], :as => "get_links_by_group"
 
   # Sample resource route with options:
   #   resources :products do

@@ -50,7 +50,8 @@ a {
 
 .notifier {
   float: left;
-  border: solid 1px silver;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .nav_options {
@@ -72,8 +73,6 @@ a {
 
 .slight_rounding {
   border-bottom-left-radius: 1em;
-  /* border-bottom-right-radius: 1em;
-  border-top-left-radius: 1em; */
   border-top-right-radius: 1em;
 }
 
@@ -90,8 +89,10 @@ a {
 
 .nav_item {
   display: table;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  /*padding-top: 10px;
+  padding-bottom: 10px;*/
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 #flash_notice, #flash_error {

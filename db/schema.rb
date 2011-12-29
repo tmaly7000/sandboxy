@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111215014520) do
+ActiveRecord::Schema.define(:version => 20111229035446) do
 
   create_table "api_users", :force => true do |t|
     t.string   "usr_name"
@@ -22,12 +22,22 @@ ActiveRecord::Schema.define(:version => 20111215014520) do
     t.datetime "updated_at"
   end
 
+  create_table "grouped_links", :id => false, :force => true do |t|
+    t.integer "link_id"
+    t.integer "link_group_id"
+  end
+
+  create_table "link_groups", :force => true do |t|
+    t.string  "title",  :limit => 20
+    t.boolean "public",               :default => false
+  end
+
   create_table "links", :force => true do |t|
-    t.string   "link",        :limit => 500, :null => false
+    t.string   "url",         :limit => 500, :null => false
     t.text     "description"
-    t.string   "category",    :limit => 50
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "title",       :limit => 100
   end
 
   create_table "users", :force => true do |t|
